@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'photos',
-        'USER': '<Your Database Username >',
-    'PASSWORD':'<Your Database Password>',
+    #     'USER': '<Your Database Username >',
+    # 'PASSWORD':'<Your Database Password>',
     }
 }
 
