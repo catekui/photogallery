@@ -41,9 +41,11 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">All</li>
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
+                        {% for category in categories %}
+                        <li class="list-group-item">{{category.name}}</li>
+                        {% endfor%}
+                        
+                
             
                             <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm">Add Photo</a>
                         
@@ -56,48 +58,6 @@
                         <div class="card my-2">
                             <img 
                             src="https://images.pexels.com/photos/1996332/pexels-photo-1996332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                            class="image-thumbnail" alt="...">
-                            <div class="card-body">
-                                <!-- <h5 class="card-title">Card title</h5> -->
-                                <small>Category: Pets</small>
-                
-                            </div>
-                            <a href="{% url 'photo'  5 %}" class="btn btn-outline-dark btn-sm m-1">Views</a>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img 
-                            src="https://media.istockphoto.com/photos/rabbit-sitting-on-white-background-picture-id450608541?k=20&m=450608541&s=612x612&w=0&h=-12X-XazHXx7zUuLDZ5jrzOLkPmRqS7uJrLfox8vBNE=" 
-                            class="image-thumbnail" alt="...">
-                            <div class="card-body">
-                                <!-- <h5 class="card-title">Card title</h5> -->
-                                <small>Category: Pets</small>
-                
-                            </div>
-                            <a href="{% url 'photo'  5 %}" class="btn btn-outline-dark btn-sm m-1">Views</a>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img 
-                            src="https://media.istockphoto.com/photos/rabbit-sitting-on-white-background-picture-id450608541?k=20&m=450608541&s=612x612&w=0&h=-12X-XazHXx7zUuLDZ5jrzOLkPmRqS7uJrLfox8vBNE=" 
-                            class="image-thumbnail" alt="...">
-                            <div class="card-body">
-                                <!-- <h5 class="card-title">Card title</h5> -->
-                                <small>Category: Pets</small>
-                
-                            </div>
-                            <a href="{% url 'photo'  5 %}" class="btn btn-outline-dark btn-sm m-1">Views</a>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img 
-                            src="https://media.istockphoto.com/photos/rabbit-sitting-on-white-background-picture-id450608541?k=20&m=450608541&s=612x612&w=0&h=-12X-XazHXx7zUuLDZ5jrzOLkPmRqS7uJrLfox8vBNE=" 
                             class="image-thumbnail" alt="...">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">Card title</h5> -->
