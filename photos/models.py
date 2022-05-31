@@ -5,9 +5,14 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False) 
+    @classmethod
+    def search_by_category(cls,search_term):
+        images = cls.objects.filter(name__icontains=search_term)
+        return images
 
     def __str__(self):
         return self.name
+
 
 class Photo(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True) 
@@ -16,3 +21,4 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.description
+

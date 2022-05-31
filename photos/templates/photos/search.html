@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+          {% if categories%}
+            <h2>Found {{ categories|length }} of searched term {{message}}</h2>
+          {% else %}
+            <h2> Found 0 categories for the search term {{message}}</h2>
+          {% endif %}
+      
+        </div>
+      
+        <div class="row">
+      
+        {% if categories %}
+          {% for cate in categories %}
+            <div class="col-sm-6 col-md-3">
+                <h1>{{cate.name}}</h1>
+            </div>
+          {% endfor %}
+        {% endif %}
+        </div>
+      </div>
+    
+</body>
+</html>
