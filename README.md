@@ -7,12 +7,11 @@
 You can view the live application by following this [link]().
 
 ####  User view
-* User can view the photos posts on the site
+* User can view the photos on the site
 * User sees  category on the site
-* User can view the location on the posts
 * User can view the image description on click.
 * user can search the category
-* User can copy the link pof the post posts
+* User can copy the link of the photos
 
 
 ####  Writer view
