@@ -13,14 +13,16 @@ def index(request):
 
 def gallery(request):
     category = request.GET.get('category')
+    # print('category:', category )
     if category == None:
         photos = Photo.objects.all()
+
     else:
         photos = Photo.objects.filter(category__name=category)
 
 
     categories = Category.objects.all()
-    photos = Photo.objects.all()
+    # photos = Photo.objects.all()
     context = {'categories': categories, 'photos': photos}
     return render(request, 'photos/gallery.html' , context)
 
@@ -34,10 +36,10 @@ def addPhoto(request):
     categories = Category.objects.all()
     if request.method == 'POST':
         data = request.POST
-        images = request.FILES.get('images')
+        image = request.FILES.get('image')
 
-        print('data:', data)
-        print('images:', images)
+        # print('data:', data)
+        # print('image:', image)
 
         if data['category'] != 'none':
             category = Category.objects.get(id=data['category'])
@@ -46,14 +48,14 @@ def addPhoto(request):
         else:
             category = None 
 
-            photo = Photo.objects.create(
+        photo = Photo.objects.create(
                 category=category,
                 description=data['description'],
                 image=image
             )
-            return redirect('gallery')
+        return redirect('gallery')
     context = {'categories': categories}
-    return render(request,'photos/add.html')
+    return render(request, 'photos/add.html',context) 
 
 
 
