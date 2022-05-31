@@ -19,11 +19,11 @@
     </style>
 </head>
 
-<body class="m-5">
+<body>
     <!-- navbar -->
-    <nav class="navbar">
+    <nav class="navbar bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand">Sweet Cate Gallery</a>
+            <a class="navbar-brand text-white">Sweet Cate Gallery</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn" style="color:red;" type="submit">Search</button>
@@ -32,7 +32,7 @@
     </nav>
 
     <!-- body -->
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
@@ -41,7 +41,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <!-- <a href="{% url 'gallery' %}">All</a> -->
+                            <a href="{% url 'gallery' %}">All</a> 
                         </li>
                         {% for category in categories %}
                             <li class="list-group-item">
@@ -57,8 +57,9 @@
                 </div>
             </div>
             <div class="col-md-9">
-                {% for photo in photos %}
+                
                 <div class="row">
+                    {% for photo in photos %}
                     <div class="col-md-4">
                         <div class="card my-2">
                             <img 
@@ -73,9 +74,10 @@
                         </div>
 
                     </div>
+                    {% empty %}
                     
                 </div>
-                {% empty %}
+               
                 <h3>No photos....</h3>
                 {% endfor %}
 
